@@ -45,7 +45,7 @@ TEMPLATES = [
     }
 ]
 
-BOOTSTRAP4 = {
+BOOTSTRAP5 = {
     "theme_url": "//example.com/theme.css",
     "javascript_in_head": True,
     "required_css_class": "bootstrap5-req",

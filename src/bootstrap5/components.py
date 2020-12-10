@@ -1,7 +1,7 @@
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
 
-from bootstrap4.utils import render_tag
+from bootstrap5.utils import render_tag
 
 from .text import text_value
 
@@ -16,7 +16,7 @@ def render_alert(content, alert_type=None, dismissible=True):
         css_classes.append("alert-dismissible")
         close = _("close")
         button = (
-            '<button type="button" class="close" data-dismiss="alert" aria-label="{close}">&times;</button>'
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{close}"></button>'
         ).format(close=close)
     button_placeholder = "__BUTTON__"
     return mark_safe(

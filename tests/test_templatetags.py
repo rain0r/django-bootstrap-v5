@@ -7,10 +7,10 @@ from django.forms import formset_factory
 from django.test import TestCase, override_settings
 from django.utils.html import escape
 
-from bootstrap4.bootstrap import get_bootstrap_setting
-from bootstrap4.exceptions import BootstrapError
-from bootstrap4.text import text_concat, text_value
-from bootstrap4.utils import add_css_class, render_tag, url_replace_param
+from bootstrap5.bootstrap import get_bootstrap_setting
+from bootstrap5.exceptions import BootstrapError
+from bootstrap5.text import text_concat, text_value
+from bootstrap5.utils import add_css_class, render_tag, url_replace_param
 from tests.utils import html_39x27
 
 from .test_templates import TestForm, render_template, render_template_with_form
@@ -71,22 +71,8 @@ class MediaTest(TestCase):
         )
         self.assertHTMLEqual(render_template_with_form("{% bootstrap_jquery jquery=False %}"), "")
 
-    @override_settings(BOOTSTRAP4={"jquery_url": {"url": "foo"}})
-    def test_bootstrap_jquery_custom_setting_dict(self):
-        self.assertHTMLEqual(render_template_with_form("{% bootstrap_jquery %}"), '<script src="foo"></script>')
-
-    @override_settings(BOOTSTRAP4={"jquery_url": "http://example.com"})
-    def test_bootstrap_jquery_custom_setting_str(self):
-        self.assertHTMLEqual(
-            render_template_with_form("{% bootstrap_jquery %}"), '<script src="http://example.com"></script>'
-        )
-
     def test_bootstrap_javascript_tag(self):
-        html = render_template_with_form("{% bootstrap_javascript jquery=True %}")
-        # jQuery
-        self.assertInHTML(self.expected_js("jquery"), html)
-        # Popper
-        self.assertInHTML(self.expected_js("popper"), html)
+        html = render_template_with_form("{% bootstrap_javascript %}")
         # Bootstrap
         self.assertInHTML(self.expected_js("javascript"), html)
 
@@ -504,9 +490,9 @@ class ComponentsTest(TestCase):
         self.assertEqual(
             res.strip(),
             '<div class="alert alert-danger alert-dismissible" role="alert">'
-            + '<button type="button" class="close" data-dismiss="alert" '
+            + '<button type="button" class="btn-close" data-bs-dismiss="alert" '
             + 'aria-label="close">'
-            + "&times;</button>content</div>",
+            + "</button>content</div>",
         )
 
 
@@ -532,8 +518,8 @@ class MessagesTest(TestCase):
         res = render_template_with_form("{% bootstrap_messages messages %}", {"messages": messages})
         expected = """
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert"
-            aria-label="close">&#215;</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="close"></button>
         hello
     </div>
 """
@@ -543,8 +529,8 @@ class MessagesTest(TestCase):
         res = render_template_with_form("{% bootstrap_messages messages %}", {"messages": messages})
         expected = """
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert"
-            aria-label="close">&#215;</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="close"></button>
         hello
     </div>
         """
@@ -554,8 +540,8 @@ class MessagesTest(TestCase):
         res = render_template_with_form("{% bootstrap_messages messages %}", {"messages": messages})
         expected = """
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert"
-            aria-label="close">&#215;</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="close"></button>
         hello
     </div>
         """
@@ -566,7 +552,7 @@ class MessagesTest(TestCase):
         res = render_template_with_form("{% bootstrap_messages messages %}", {"messages": messages})
         expected = """
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">&#215;</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
         hello http://example.com
     </div>        """
         self.assertEqual(
@@ -578,8 +564,8 @@ class MessagesTest(TestCase):
         res = render_template_with_form("{% bootstrap_messages messages %}", {"messages": messages})
         expected = """
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert"
-            aria-label="close">&#215;</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="close"></button>
         hello there
     </div>
         """

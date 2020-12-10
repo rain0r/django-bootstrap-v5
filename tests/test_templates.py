@@ -4,7 +4,7 @@ from django.contrib.gis import forms as gisforms
 from django.template import engines
 from django.test import TestCase
 
-from bootstrap4.widgets import RadioSelectButtonGroup
+from bootstrap5.widgets import RadioSelectButtonGroup
 
 RADIO_CHOICES = (("1", "Radio 1"), ("2", "Radio 2"))
 
@@ -107,20 +107,20 @@ class TemplateTest(TestCase):
         res = render_template_with_form("some text")
         self.assertEqual(res.strip(), "some text")
 
-    def test_bootstrap4_html_template_title(self):
+    def test_bootstrap5_html_template_title(self):
         res = render_template(
             '{% extends "bootstrap5/bootstrap5.html" %}'
-            + "{% block bootstrap4_title %}"
-            + "test_bootstrap4_title"
+            + "{% block bootstrap5_title %}"
+            + "test_bootstrap5_title"
             + "{% endblock %}"
         )
-        self.assertIn("test_bootstrap4_title", res)
+        self.assertIn("test_bootstrap5_title", res)
 
-    def test_bootstrap4_html_template_content(self):
+    def test_bootstrap5_html_template_content(self):
         res = render_template(
             '{% extends "bootstrap5/bootstrap5.html" %}'
-            + "{% block bootstrap4_content %}"
-            + "test_bootstrap4_content"
+            + "{% block bootstrap5_content %}"
+            + "test_bootstrap5_content"
             + "{% endblock %}"
         )
-        self.assertIn("test_bootstrap4_content", res)
+        self.assertIn("test_bootstrap5_content", res)

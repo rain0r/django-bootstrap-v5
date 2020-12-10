@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.utils.safestring import mark_safe
 
-from bootstrap4.components import render_alert
-from bootstrap4.exceptions import BootstrapError
-from bootstrap4.forms import render_button
+from bootstrap5.components import render_alert
+from bootstrap5.exceptions import BootstrapError
+from bootstrap5.forms import render_button
 
 
 class AlertsTest(TestCase):
@@ -12,7 +12,7 @@ class AlertsTest(TestCase):
             render_alert("content"),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>content'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
                 "</div>"
             ),
         )
@@ -22,7 +22,7 @@ class AlertsTest(TestCase):
             render_alert("content", alert_type="danger"),
             (
                 '<div class="alert alert-danger alert-dismissible" role="alert">'
-                '<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
                 "content"
                 "</div>"
             ),
@@ -33,7 +33,7 @@ class AlertsTest(TestCase):
             render_alert(mark_safe('This is <a href="https://example.com" class="alert-link">a safe link</a>!')),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
                 'This is <a href="https://example.com" class="alert-link">a safe link</a>!'
                 "</div>"
             ),
@@ -44,7 +44,7 @@ class AlertsTest(TestCase):
             render_alert("This is <b>unsafe</b>!"),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
                 "This is &lt;b&gt;unsafe&lt;/b&gt;!"
                 "</div>"
             ),

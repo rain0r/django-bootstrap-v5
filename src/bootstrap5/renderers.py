@@ -243,7 +243,7 @@ class FieldRenderer(BaseRenderer):
             "addon_after_class", self.widget.attrs.pop("addon_after_class", "input-group-text")
         )
 
-        # These are set in Django or in the global BOOTSTRAP4 settings, and
+        # These are set in Django or in the global BOOTSTRAP5 settings, and
         # they can be overwritten in the template
         error_css_class = kwargs.get("error_css_class", None)
         required_css_class = kwargs.get("required_css_class", None)
