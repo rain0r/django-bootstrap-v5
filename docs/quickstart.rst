@@ -30,5 +30,5 @@ Demo application
 
 The demo application provides a number of useful examples.
 
-https://github.com/zostera/django-bootstrap5/tree/main/example
+https://github.com/zelenij/django-bootstrap5/tree/main/example
 
