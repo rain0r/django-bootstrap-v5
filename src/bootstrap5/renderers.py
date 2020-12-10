@@ -127,7 +127,7 @@ class FormsetRenderer(BaseRenderer):
         formset_errors = self.get_formset_errors()
         if formset_errors:
             return render_template_file(
-                "bootstrap4/form_errors.html",
+                "bootstrap5/form_errors.html",
                 context={"errors": formset_errors, "form": self.formset, "layout": self.layout},
             )
         return ""
@@ -193,7 +193,7 @@ class FormRenderer(BaseRenderer):
 
         if form_errors:
             return render_template_file(
-                "bootstrap4/form_errors.html",
+                "bootstrap5/form_errors.html",
                 context={"errors": form_errors, "form": self.form, "layout": self.layout, "type": type},
             )
 
@@ -330,7 +330,7 @@ class FieldRenderer(BaseRenderer):
         for k, v in mapping:
             html = html.replace(k, v)
 
-        # Apply bootstrap4 classes to labels and inputs.
+        # Apply bootstrap5 classes to labels and inputs.
         # A simple 'replace' isn't enough as we don't want to have several 'class' attr definition, which would happen
         # if we tried to 'html.replace("input", "input class=...")'
         soup = BeautifulSoup(html, features="html.parser")
@@ -357,7 +357,7 @@ class FieldRenderer(BaseRenderer):
         div2 = "</div>"
         html = html.replace("<select", div1 + "<select")
         html = html.replace("</select>", "</select>" + div2)
-        return '<div class="row bootstrap4-multi-input">{html}</div>'.format(html=html)
+        return '<div class="row bootstrap5-multi-input">{html}</div>'.format(html=html)
 
     def fix_file_input_label(self, html):
         html = "<br>" + html
@@ -407,7 +407,7 @@ class FieldRenderer(BaseRenderer):
         field_help = self.field_help or None
         if field_help:
             help_html = render_template_file(
-                "bootstrap4/field_help_text.html",
+                "bootstrap5/field_help_text.html",
                 context={
                     "field": self.field,
                     "field_help": field_help,
@@ -422,7 +422,7 @@ class FieldRenderer(BaseRenderer):
         field_errors = self.field_errors
         if field_errors:
             errors_html = render_template_file(
-                "bootstrap4/field_errors.html",
+                "bootstrap5/field_errors.html",
                 context={
                     "field": self.field,
                     "field_errors": field_errors,

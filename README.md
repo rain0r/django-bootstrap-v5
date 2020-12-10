@@ -1,15 +1,17 @@
-# django-bootstrap 4
+# django-bootstrap 5
 
-[![CI](https://github.com/zostera/django-bootstrap4/workflows/CI/badge.svg?branch=main)](https://github.com/zostera/django-bootstrap4/actions?workflow=CI)
-[![Coverage Status](https://coveralls.io/repos/github/zostera/django-bootstrap4/badge.svg?branch=main)](https://coveralls.io/github/zostera/django-bootstrap4?branch=main)
-[![Latest PyPI version](https://img.shields.io/pypi/v/django-bootstrap4.svg)](https://pypi.python.org/pypi/django-bootstrap4)
+This package builds on top of the excellent [django-bootstrap4](https://github.com/zostera/django-bootstrap4) package.
+
+[![CI](https://github.com/zelenij/django-bootstrap5/workflows/CI/badge.svg?branch=main)](https://github.com/django-bootstrap5/actions?workflow=CI)
+[![Coverage Status](https://coveralls.io/repos/github/django-bootstrap5/badge.svg?branch=main)](https://coveralls.io/github/django-bootstrap5?branch=main)
+[![Latest PyPI version](https://img.shields.io/pypi/v/django-bootstrap4.svg)](https://pypi.python.org/pypi/django-bootstrap5)
 [![Any color you like](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-Bootstrap 4 integration for Django.
+Bootstrap 5 integration for Django.
 
 ## Goal
 
-The goal of this project is to seamlessly blend Django and Bootstrap 4.
+The goal of this project is to seamlessly blend Django and Bootstrap 5.
 
 ## Requirements
 
@@ -17,14 +19,14 @@ Python 3.6 or newer with Django >= 2.2 or newer.
 
 ## Documentation
 
-The full documentation is at https://django-bootstrap4.readthedocs.io/
+The full documentation is at https://django-bootstrap5.readthedocs.io/
 
 ## Installation
 
 1. Install using pip:
 
     ```shell script
-    pip install django-bootstrap4
+    pip install django-bootstrap5
     ```
    
    Alternatively, you can install download or clone this repo and call ``pip install -e .``.
@@ -34,17 +36,17 @@ The full documentation is at https://django-bootstrap4.readthedocs.io/
    ```python
    INSTALLED_APPS = (
        # ...
-       "bootstrap4",
+       "bootstrap5",
        # ...
    )
    ````
 
-3. In your templates, load the `bootstrap4` library and use the `bootstrap_*` tags:
+3. In your templates, load the `bootstrap5` library and use the `bootstrap_*` tags:
 
 ## Example template
 
 ```djangotemplate
-{% load bootstrap4 %}
+{% load bootstrap5 %}
 
 {# Display a form #}
 
@@ -80,9 +82,12 @@ You can use this under BSD-3-Clause. See [LICENSE](LICENSE) file for details.
 Author
 ------
 
-Developed and maintained by [Zostera](https://zostera.nl).
+Developed and maintained by [Andre Bar'yudin](https://www.baryudin.com)
 
-Original author: [Dylan Verheul](https://github.com/dyve).
+Original authors: 
+
+* [Zostera](https://zostera.nl)
+* [Dylan Verheul](https://github.com/dyve)
 
 Thanks to everybody that has contributed pull requests, ideas, issues, comments and kind words.
 

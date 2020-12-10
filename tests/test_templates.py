@@ -16,7 +16,7 @@ MEDIA_CHOICES = (
 
 
 class TestForm(forms.Form):
-    """Form with a variety of widgets to test bootstrap4 rendering."""
+    """Form with a variety of widgets to test bootstrap5 rendering."""
 
     date = forms.DateField(required=False)
     datetime = forms.SplitDateTimeField(widget=AdminSplitDateTime(), required=False)
@@ -50,7 +50,7 @@ class TestForm(forms.Form):
     addon = forms.CharField(widget=forms.TextInput(attrs={"addon_before": "before", "addon_after": "after"}))
     polygon = gisforms.PointField()
 
-    required_css_class = "bootstrap4-req"
+    required_css_class = "bootstrap5-req"
     non_field_error_message = "This is a non field error."
 
     # Set this to allow tests to work properly in Django 1.10+
@@ -67,7 +67,7 @@ class TestFormWithoutRequiredClass(TestForm):
 
 
 def render_template(text, context=None):
-    """Create a template ``text`` that first loads bootstrap4."""
+    """Create a template ``text`` that first loads bootstrap5."""
     template = engines["django"].from_string(text)
     if not context:
         context = {}
@@ -75,15 +75,15 @@ def render_template(text, context=None):
 
 
 def render_template_with_bootstrap(text, context=None):
-    """Create a template ``text`` that first loads bootstrap4."""
+    """Create a template ``text`` that first loads bootstrap5."""
     if not context:
         context = {}
-    return render_template("{% load bootstrap4 %}" + text, context)
+    return render_template("{% load bootstrap5 %}" + text, context)
 
 
 def render_template_with_form(text, context=None, data=None):
     """
-    Create a template ``text`` that first loads bootstrap4.
+    Create a template ``text`` that first loads bootstrap5.
 
     When ``data`` is given, the form will be initialized with data and
     form.is_valid() will be called in order to enable validations.
@@ -109,7 +109,7 @@ class TemplateTest(TestCase):
 
     def test_bootstrap4_html_template_title(self):
         res = render_template(
-            '{% extends "bootstrap4/bootstrap4.html" %}'
+            '{% extends "bootstrap5/bootstrap5.html" %}'
             + "{% block bootstrap4_title %}"
             + "test_bootstrap4_title"
             + "{% endblock %}"
@@ -118,7 +118,7 @@ class TemplateTest(TestCase):
 
     def test_bootstrap4_html_template_content(self):
         res = render_template(
-            '{% extends "bootstrap4/bootstrap4.html" %}'
+            '{% extends "bootstrap5/bootstrap5.html" %}'
             + "{% block bootstrap4_content %}"
             + "test_bootstrap4_content"
             + "{% endblock %}"

@@ -15,7 +15,7 @@ MEDIA_CHOICES = (
 
 
 class TestForm(forms.Form):
-    """Form with a variety of widgets to test bootstrap4 rendering."""
+    """Form with a variety of widgets to test bootstrap5 rendering."""
 
     date = forms.DateField(required=False)
     datetime = forms.SplitDateTimeField(widget=AdminSplitDateTime(), required=False)
@@ -48,7 +48,7 @@ class TestForm(forms.Form):
     category5 = forms.ChoiceField(widget=RadioSelectButtonGroup, choices=MEDIA_CHOICES)
     addon = forms.CharField(widget=forms.TextInput(attrs={"addon_before": "before", "addon_after": "after"}))
 
-    required_css_class = "bootstrap4-req"
+    required_css_class = "bootstrap5-req"
 
     # Set this to allow tests to work properly in Django 1.10+
     # More information, see issue #337

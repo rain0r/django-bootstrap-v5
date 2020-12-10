@@ -98,24 +98,24 @@ class MediaTest(TestCase):
 
     def test_bootstrap_setting_filter(self):
         res = render_template_with_form('{{ "required_css_class"|bootstrap_setting }}')
-        self.assertEqual(res.strip(), "bootstrap4-req")
+        self.assertEqual(res.strip(), "bootstrap5-req")
         res = render_template_with_form('{% if "javascript_in_head"|bootstrap_setting %}head{% else %}body{% endif %}')
         self.assertEqual(res.strip(), "head")
 
     def test_bootstrap_required_class(self):
         form = TestForm()
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-req", res)
+        self.assertIn("bootstrap5-req", res)
 
     def test_bootstrap_error_class(self):
         form = TestForm({})
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-err", res)
+        self.assertIn("bootstrap5-err", res)
 
     def test_bootstrap_bound_class(self):
         form = TestForm({"sender": "sender"})
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-bound", res)
+        self.assertIn("bootstrap5-bound", res)
 
 
 class JavaScriptTagTest(TestCase):
@@ -198,18 +198,18 @@ class BootstrapFormTest(TestCase):
     def test_error_class(self):
         form = TestForm({"sender": "sender"})
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-err", res)
+        self.assertIn("bootstrap5-err", res)
 
         res = render_template_with_form('{% bootstrap_form form error_css_class="successful-test" %}', {"form": form})
         self.assertIn("successful-test", res)
 
         res = render_template_with_form('{% bootstrap_form form error_css_class="" %}', {"form": form})
-        self.assertNotIn("bootstrap4-err", res)
+        self.assertNotIn("bootstrap5-err", res)
 
     def test_required_class(self):
         form = TestForm({"sender": "sender"})
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-req", res)
+        self.assertIn("bootstrap5-req", res)
 
         res = render_template_with_form(
             '{% bootstrap_form form required_css_class="successful-test" %}', {"form": form}
@@ -217,13 +217,13 @@ class BootstrapFormTest(TestCase):
         self.assertIn("successful-test", res)
 
         res = render_template_with_form('{% bootstrap_form form required_css_class="" %}', {"form": form})
-        self.assertNotIn("bootstrap4-req", res)
+        self.assertNotIn("bootstrap5-req", res)
 
     def test_bound_class(self):
         form = TestForm({"sender": "sender"})
 
         res = render_template_with_form("{% bootstrap_form form %}", {"form": form})
-        self.assertIn("bootstrap4-bound", res)
+        self.assertIn("bootstrap5-bound", res)
 
         form = TestForm({"sender": "sender"})
 
@@ -233,7 +233,7 @@ class BootstrapFormTest(TestCase):
         form = TestForm({"sender": "sender"})
 
         res = render_template_with_form('{% bootstrap_form form bound_css_class="" %}', {"form": form})
-        self.assertNotIn("bootstrap4-bound", res)
+        self.assertNotIn("bootstrap5-bound", res)
 
     def test_radio_select_button_group(self):
         form = TestForm()
@@ -379,7 +379,7 @@ class FieldTest(TestCase):
         self.assertIn("text-muted", help_text["class"], "The help text should have the class 'text-muted'.")
 
     def test_required_field(self):
-        required_css_class = "bootstrap4-req"
+        required_css_class = "bootstrap5-req"
         required_field = render_form_field("subject")
         self.assertIn(required_css_class, required_field)
         not_required_field = render_form_field("message")
@@ -393,7 +393,7 @@ class FieldTest(TestCase):
 
     def test_empty_permitted(self):
         """If a form has empty_permitted, no fields should get the CSS class for required."""
-        required_css_class = "bootstrap4-req"
+        required_css_class = "bootstrap5-req"
         form = TestForm()
         res = render_form_field("subject", {"form": form})
         self.assertIn(required_css_class, res)
@@ -660,7 +660,7 @@ class PaginatorTest(TestCase):
     def bootstrap_pagination(self, page, extra=""):
         """Helper to test bootstrap_pagination tag."""
         template = """
-            {% load bootstrap4 %}
+            {% load bootstrap5 %}
             {% bootstrap_pagination page {extra} %}
         """.replace(
             "{extra}", extra

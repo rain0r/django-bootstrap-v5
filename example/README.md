@@ -9,7 +9,7 @@ To run the example:
 ```bash
 git clone https://github.com/zostera/django-bootstrap4.git
 
-cd django-bootstrap4/example
+cd django-bootstrap5/example
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
