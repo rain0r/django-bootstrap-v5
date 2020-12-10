@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "django-bootstrap4"
-version = "2.3.2"
+name = "django-bootstrap5"
+version = "1.0.0"
 description = "Bootstrap support for Django projects"
-homepage = "https://github.com/zostera/django-bootstrap4"
-repository = "https://github.com/zostera/django-bootstrap4"
-documentation = "https://django-bootstrap4.readthedocs.io/"
-authors = ["Dylan Verheul <dylan@zostera.nl>"]
+homepage = "https://github.com/zelenij/django-bootstrap5"
+repository = "https://github.com/zelenij/django-bootstrap5"
+documentation = "https://django-bootstrap5.readthedocs.io/"
+authors = ["Andre Bar'yudin <andre.baryudin@gmail.com>"]
 license = "BSD-3-Clause"
 readme = "README.md"
-keywords= ["django", "django-bootstrap4", "bootstrap4", "bootstrap"]
+keywords= ["django", "django-bootstrap5", "bootstrap5", "bootstrap"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
@@ -26,7 +26,7 @@ classifiers = [
     "Topic :: Utilities",
 ]
 packages = [
-    { include = "bootstrap4", from = "src" },
+    { include = "bootstrap5", from = "src" },
     { include = "docs", format = "sdist" },
     { include = "tests", format = "sdist" },
 ]
@@ -35,7 +35,7 @@ include = ["LICENSE"]
 [tool.poetry.dependencies]
 python = "^3.6"
 django = "^2.2 || ^3.0"
-importlib-metadata = { version = "<3", python = "<3.8", optional = true }
+importlib-metadata = { version = "<3", python = "<3.9", optional = true }
 beautifulsoup4 = "^4.8.0"
 
 # docs
@@ -62,7 +62,7 @@ target-version = ["py36"]
 
 [tool.coverage.run]
 branch = true
-source = ["bootstrap4"]
+source = ["bootstrap5"]
 
 [tool.coverage.paths]
 source = ["src", ".tox/*/site-packages"]

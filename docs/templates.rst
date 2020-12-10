@@ -2,10 +2,10 @@
 Templates
 =========
 
-You can customize the output of ``django-bootstrap4`` by writing your own templates. These templates are available:
+You can customize the output of ``django-bootstrap5`` by writing your own templates. These templates are available:
 
 
-bootstrap4/field_help_text_and_errors.html
+bootstrap5/field_help_text_and_errors.html
 ------------------------------------------
 
 This renders the help text and error of each field.
@@ -13,7 +13,7 @@ This renders the help text and error of each field.
 Variable ``help_text_and_errors`` contains an array of strings.
 
 
-bootstrap4/form_errors.html
+bootstrap5/form_errors.html
 ---------------------------
 
 This renders the non field errors of a form.
@@ -21,7 +21,7 @@ This renders the non field errors of a form.
 Variable ``errors`` contains an array of strings.
 
 
-bootstrap4/messages.html
+bootstrap5/messages.html
 ------------------------
 
 This renders the Django messages variable.
@@ -39,4 +39,4 @@ Variable ``messages`` contains the messages as described in https://docs.djangop
 Other
 -----
 
-There are two more templates, ``bootstrap4/bootstrap4.html`` and ``bootstrap4/pagination.html``. You should consider these private for now, meaning you can use them but not modify them.
+There are two more templates, ``bootstrap5/bootstrap5.html`` and ``bootstrap5/pagination.html``. You should consider these private for now, meaning you can use them but not modify them.
