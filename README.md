@@ -1,4 +1,4 @@
-# django-bootstrap 5
+# django-bootstrap 5r
 
 This package builds on top of the excellent [django-bootstrap4](https://github.com/zostera/django-bootstrap4) package.
 
@@ -8,6 +8,10 @@ This package builds on top of the excellent [django-bootstrap4](https://github.c
 [![Any color you like](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 Bootstrap 5 integration for Django.
+
+## Package name
+
+Unfortunately, someone squatted on the django-bootstrap5 (as well as 6, 7, 8 etc) name in PyPi in 2013, so I had to modify the name of this package accordingly.
 
 ## Goal
 
@@ -26,7 +30,7 @@ The full documentation is at https://django-bootstrap5.readthedocs.io/
 1. Install using pip:
 
     ```shell script
-    pip install django-bootstrap5
+    pip install django-bootstrap5r
     ```
    
    Alternatively, you can install download or clone this repo and call ``pip install -e .``.

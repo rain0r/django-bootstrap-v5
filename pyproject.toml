@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "django-bootstrap5"
+name = "django-bootstrap5r"
 version = "1.0.0"
 description = "Bootstrap support for Django projects"
 homepage = "https://github.com/zelenij/django-bootstrap5"
 repository = "https://github.com/zelenij/django-bootstrap5"
-documentation = "https://django-bootstrap5.readthedocs.io/"
+documentation = "https://django-bootstrap5r.readthedocs.io/"
 authors = ["Andre Bar'yudin <andre.baryudin@gmail.com>"]
 license = "BSD-3-Clause"
 readme = "README.md"
