@@ -12,7 +12,8 @@ class AlertsTest(TestCase):
             render_alert("content"),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>'
+                "content"
                 "</div>"
             ),
         )
@@ -22,7 +23,7 @@ class AlertsTest(TestCase):
             render_alert("content", alert_type="danger"),
             (
                 '<div class="alert alert-danger alert-dismissible" role="alert">'
-                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>'
                 "content"
                 "</div>"
             ),
@@ -33,7 +34,7 @@ class AlertsTest(TestCase):
             render_alert(mark_safe('This is <a href="https://example.com" class="alert-link">a safe link</a>!')),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>'
                 'This is <a href="https://example.com" class="alert-link">a safe link</a>!'
                 "</div>"
             ),
@@ -44,7 +45,7 @@ class AlertsTest(TestCase):
             render_alert("This is <b>unsafe</b>!"),
             (
                 '<div class="alert alert-info alert-dismissible" role="alert">'
-                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>'
                 "This is &lt;b&gt;unsafe&lt;/b&gt;!"
                 "</div>"
             ),

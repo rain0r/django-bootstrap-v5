@@ -148,5 +148,4 @@ BOOTSTRAP5 = {
     "error_css_class": "bootstrap5-error",
     "required_css_class": "bootstrap5-required",
     "javascript_in_head": True,
-    "include_jquery": True,
 }

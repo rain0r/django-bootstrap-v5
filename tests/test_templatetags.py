@@ -58,19 +58,6 @@ class MediaTest(TestCase):
         setting = get_bootstrap_setting(tag + "_url")
         return template.format(**setting)
 
-    def test_bootstrap_jquery(self):
-        self.assertHTMLEqual(render_template_with_form("{% bootstrap_jquery %}"), self.expected_js("jquery"))
-        self.assertHTMLEqual(
-            render_template_with_form("{% bootstrap_jquery jquery=True %}"), self.expected_js("jquery")
-        )
-        self.assertHTMLEqual(
-            render_template_with_form('{% bootstrap_jquery jquery="full" %}'), self.expected_js("jquery")
-        )
-        self.assertHTMLEqual(
-            render_template_with_form('{% bootstrap_jquery jquery="slim" %}'), self.expected_js("jquery_slim")
-        )
-        self.assertHTMLEqual(render_template_with_form("{% bootstrap_jquery jquery=False %}"), "")
-
     def test_bootstrap_javascript_tag(self):
         html = render_template_with_form("{% bootstrap_javascript %}")
         # Bootstrap
@@ -109,11 +96,6 @@ class JavaScriptTagTest(TestCase):
         res = render_template_with_form("{% bootstrap_javascript %}")
         self.assertIn("bootstrap", res)
         self.assertNotIn("jquery", res)
-
-    def test_bootstrap_javascript_with_jquery(self):
-        res = render_template_with_form("{% bootstrap_javascript jquery=True %}")
-        self.assertIn("bootstrap", res)
-        self.assertIn("jquery", res)
 
 
 class BootstrapFormSetTest(TestCase):

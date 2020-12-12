@@ -694,10 +694,6 @@ def bootstrap_messages(context, *args, **kwargs):
     """
     Show django.contrib.messages Messages in Bootstrap alert containers.
 
-    In order to make the alerts dismissible (with the close button),
-    we have to set the jquery parameter too when using the
-    bootstrap_javascript tag.
-
     Uses the template ``bootstrap5/messages.html``.
 
     **Tag name**::
@@ -714,7 +710,7 @@ def bootstrap_messages(context, *args, **kwargs):
 
     **Example**::
 
-        {% bootstrap_javascript jquery=True %}
+        {% bootstrap_javascript %}
         {% bootstrap_messages %}
     """
     # Force Context to dict
