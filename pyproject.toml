@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "django-bootstrap5r"
+name = "django-bootstrap-v5"
 version = "1.0.0"
-description = "Bootstrap support for Django projects"
-homepage = "https://github.com/zelenij/django-bootstrap5"
-repository = "https://github.com/zelenij/django-bootstrap5"
-documentation = "https://django-bootstrap5r.readthedocs.io/"
+description = "Bootstrap 5 support for Django projects"
+homepage = "https://github.com/zelenij/django-bootstrap-v5"
+repository = "https://github.com/zelenij/django-bootstrap-v5"
+documentation = "https://django-bootstrap-v5.readthedocs.io/"
 authors = ["Andre Bar'yudin <andre.baryudin@gmail.com>"]
 license = "BSD-3-Clause"
 readme = "README.md"
-keywords= ["django", "django-bootstrap5", "bootstrap5", "bootstrap"]
+keywords= ["django", "django-bootstrap-v5", "bootstrap5", "bootstrap"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",

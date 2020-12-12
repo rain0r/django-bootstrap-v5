@@ -2,7 +2,7 @@
 Settings
 ========
 
-The django-bootstrap5 has some pre-configured settings.
+The django-bootstrap-v5 has some pre-configured settings.
 
 They can be modified by adding a dict variable called ``BOOTSTRAP5`` in your ``settings.py`` and customizing the values ​​you want;
 

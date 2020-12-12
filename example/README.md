@@ -1,4 +1,4 @@
-# Example project for django-bootstrap5
+# Example project for django-bootstrap-v5
 
 This example project only supports the latest version of Django.
 
@@ -7,9 +7,9 @@ This example project only supports the latest version of Django.
 To run the example:
 
 ```bash
-git clone https://github.com/zelenij/django-bootstrap5.git
+git clone https://github.com/zelenij/django-bootstrap-v5.git
 
-cd django-bootstrap5/example
+cd django-bootstrap-v5/example
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver

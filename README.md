@@ -1,17 +1,17 @@
-# django-bootstrap 5r
+# django-bootstrap v5
 
 This package builds on top of the excellent [django-bootstrap4](https://github.com/zostera/django-bootstrap4) package.
 
-[![CI](https://github.com/zelenij/django-bootstrap5/workflows/CI/badge.svg?branch=main)](https://github.com/django-bootstrap5/actions?workflow=CI)
-[![Coverage Status](https://coveralls.io/repos/github/django-bootstrap5/badge.svg?branch=main)](https://coveralls.io/github/django-bootstrap5?branch=main)
-[![Latest PyPI version](https://img.shields.io/pypi/v/django-bootstrap5.svg)](https://pypi.python.org/pypi/django-bootstrap5)
+[![CI](https://github.com/zelenij/django-bootstrap-v5/workflows/CI/badge.svg?branch=main)](https://github.com/django-bootstrap-v5/actions?workflow=CI)
+[![Coverage Status](https://coveralls.io/repos/github/django-bootstrap-v5/badge.svg?branch=main)](https://coveralls.io/github/django-bootstrap-v5?branch=main)
+[![Latest PyPI version](https://img.shields.io/pypi/v/django-bootstrap-v5.svg)](https://pypi.python.org/pypi/django-bootstrap-v5)
 [![Any color you like](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 Bootstrap 5 integration for Django.
 
 ## Package name
 
-Unfortunately, someone squatted on the django-bootstrap5 (as well as 6, 7, 8 etc) name in PyPi in 2013, so I had to modify the name of this package accordingly.
+Unfortunately, someone squatted on the django-bootstrap-v5 (as well as 6, 7, 8 etc) name in PyPi in 2013, so I had to modify the name of this package accordingly.
 
 ## Goal
 
@@ -23,14 +23,14 @@ Python 3.6 or newer with Django >= 2.2 or newer.
 
 ## Documentation
 
-The full documentation is at https://django-bootstrap5.readthedocs.io/
+The full documentation is at https://django-bootstrap-v5.readthedocs.io/
 
 ## Installation
 
 1. Install using pip:
 
     ```shell script
-    pip install django-bootstrap5r
+    pip install django-bootstrap-v5
     ```
    
    Alternatively, you can install download or clone this repo and call ``pip install -e .``.
@@ -74,7 +74,7 @@ Bugs and suggestions
 
 If you have found a bug or if you have a request for additional functionality, please use the issue tracker on GitHub.
 
-https://github.com/zelenij/django-bootstrap5/issues
+https://github.com/zelenij/django-bootstrap-v5/issues
 
 
 License

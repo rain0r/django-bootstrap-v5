@@ -2,7 +2,7 @@
 Quickstart
 ==========
 
-After :doc:`installation`, you can use ``django-bootstrap5`` in your templates.:
+After :doc:`installation`, you can use ``django-bootstrap-v5`` in your templates.:
 
 Load the ``bootstrap5`` library and use the ``bootstrap_*`` tags:
 
@@ -22,7 +22,7 @@ Refer to :doc:`templatetags` for more information.
 Settings
 --------
 
-You can set defaults for ``django-bootstrap5`` in your settings file. Refer to :doc:`settings` for more information.
+You can set defaults for ``django-bootstrap-v5`` in your settings file. Refer to :doc:`settings` for more information.
 
 
 Demo application
@@ -30,5 +30,5 @@ Demo application
 
 The demo application provides a number of useful examples.
 
-https://github.com/zelenij/django-bootstrap5/tree/main/example
+https://github.com/zelenij/django-bootstrap-v5/tree/main/example
 

@@ -1,5 +1,5 @@
-Welcome to django-bootstrap5's documentation!
-=============================================
+Welcome to django-bootstrap-v5's documentation!
+===============================================
 
 Contents:
 

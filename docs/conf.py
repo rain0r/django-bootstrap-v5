@@ -5,10 +5,11 @@ try:
 except ImportError:
     from importlib_metadata import metadata
 
-PROJECT_NAME = "django-bootstrap5"
+PROJECT_NAME = "django-bootstrap-v5"
 
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 project_metadata = metadata(PROJECT_NAME)
+print(project_metadata)
 
 project = project_metadata["name"]
 author = project_metadata["author"]

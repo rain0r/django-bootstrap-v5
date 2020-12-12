@@ -143,7 +143,7 @@ LOGGING = {
     "loggers": {"django.request": {"handlers": ["mail_admins"], "level": "ERROR", "propagate": True}},
 }
 
-# Settings for django-bootstrap5
+# Settings for django-bootstrap-v5
 BOOTSTRAP5 = {
     "error_css_class": "bootstrap5-error",
     "required_css_class": "bootstrap5-required",
