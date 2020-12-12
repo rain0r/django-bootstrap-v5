@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from django.contrib.messages import constants as DEFAULT_MESSAGE_LEVELS
 from django.core.paginator import Paginator
 from django.forms import formset_factory
-from django.test import TestCase, override_settings
+from django.test import TestCase
 from django.utils.html import escape
 
 from bootstrap5.bootstrap import get_bootstrap_setting
