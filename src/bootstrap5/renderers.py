@@ -207,7 +207,7 @@ class FieldRenderer(BaseRenderer):
     """Default field renderer."""
 
     # These widgets will not be wrapped in a form-control class
-    WIDGETS_NO_FORM_CONTROL = (CheckboxInput, RadioSelect, CheckboxSelectMultiple, FileInput)
+    WIDGETS_NO_FORM_CONTROL = (CheckboxInput, RadioSelect, CheckboxSelectMultiple, Select)
 
     def __init__(self, field, *args, **kwargs):
         if not isinstance(field, BoundField):
@@ -283,8 +283,8 @@ class FieldRenderer(BaseRenderer):
             classes = add_css_class(classes, self.get_size_class())
         elif isinstance(widget, CheckboxInput):
             classes = add_css_class(classes, "form-check-input", prepend=True)
-        elif isinstance(widget, FileInput):
-            classes = add_css_class(classes, "form-control-file", prepend=True)
+        elif isinstance(widget, Select):
+            classes = add_css_class(classes, "form-select", prepend=True)
 
         if self.field.errors:
             if self.error_css_class:
@@ -471,8 +471,10 @@ class FieldRenderer(BaseRenderer):
             label_class = self.horizontal_label_class
             label_class = add_css_class(label_class, "col-form-label")
         label_class = text_value(label_class)
-        if not self.show_label or self.show_label == "sr-only":
-            label_class = add_css_class(label_class, "sr-only")
+        if not label_class:
+            label_class = "form-label"
+        if not self.show_label or self.show_label == "visually-hidden":
+            label_class = add_css_class(label_class, "visually-hidden")
         return label_class
 
     def get_label(self):
@@ -550,5 +552,10 @@ class InlineFieldRenderer(FieldRenderer):
     def get_field_class(self):
         return self.field_class
 
+    def get_form_group_class(self):
+        if self.form_group_class == FORM_GROUP_CLASS:
+            self.form_group_class = "col-auto"
+        return super().get_form_group_class()
+
     def get_label_class(self):
-        return add_css_class(self.label_class, "sr-only")
+        return add_css_class(self.label_class, "visually-hidden")

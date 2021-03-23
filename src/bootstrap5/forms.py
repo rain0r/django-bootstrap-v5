@@ -6,7 +6,7 @@ from .exceptions import BootstrapError
 from .text import text_value
 from .utils import add_css_class, render_tag
 
-FORM_GROUP_CLASS = "form-group"
+FORM_GROUP_CLASS = "mb-3"
 
 
 def render_formset(formset, **kwargs):
@@ -39,7 +39,7 @@ def render_field(field, **kwargs):
     return renderer_cls(field, **kwargs).render()
 
 
-def render_label(content, label_for=None, label_class=None, label_title=""):
+def render_label(content, label_for=None, label_class="form-label", label_title=""):
     """Render a label with content."""
     attrs = {}
     if label_for:

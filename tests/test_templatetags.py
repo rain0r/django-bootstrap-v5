@@ -279,7 +279,7 @@ class FieldTest(TestCase):
         self.assertIn('type="text"', res)
 
         expect = html_39x27(
-            '<label for="id_xss_field">'
+            '<label class="form-label" for="id_xss_field">'
             "XSS&quot; onmouseover=&quot;alert(&#x27;Hello, XSS&#x27;)&quot; foo=&quot;</label>"
         )
         self.assertIn(
@@ -300,8 +300,8 @@ class FieldTest(TestCase):
         # strip out newlines and spaces around newlines
         res = "".join(line.strip() for line in res.split("\n"))
         res = BeautifulSoup(res, "html.parser")
-        form_group = self._select_one_element(res, ".form-group", "RadioSelect should be rendered inside a .form-group")
-        radio = self._select_one_element(form_group, ".radio", "There should be a .radio inside .form-group")
+        form_group = self._select_one_element(res, ".mb-3", "RadioSelect should be rendered inside a .mb-3")
+        radio = self._select_one_element(form_group, ".radio", "There should be a .radio inside .mb-3")
         self.assertIn("radio-success", radio["class"], "The radio select should have the class 'radio-success'")
         elements = radio.find_all("div", class_="form-check")
         self.assertIsNotNone(elements, "Radio should have at least one div with class 'form-check'")
@@ -328,9 +328,9 @@ class FieldTest(TestCase):
         # strip out newlines and spaces around newlines
         res = "".join(line.strip() for line in res.split("\n"))
         res = BeautifulSoup(res, "html.parser")
-        form_group = self._select_one_element(res, ".form-group", "Checkbox should be rendered inside a .form-group.")
+        form_group = self._select_one_element(res, ".mb-3", "Checkbox should be rendered inside a .mb-3.")
         form_check = self._select_one_element(
-            form_group, ".form-check", "There should be a .form-check inside .form-group"
+            form_group, ".form-check", "There should be a .form-check inside .mb-3"
         )
         checkbox = self._select_one_element(form_check, "input", "The checkbox should be inside the .form-check")
         self.assertIn("form-check-input", checkbox["class"], "The checkbox should have the class 'form-check-input'.")
@@ -345,6 +345,10 @@ class FieldTest(TestCase):
         self.assertEqual(help_text.name, "small", "The help text should be rendered as <small> tag.")
         self.assertIn("form-text", help_text["class"], "The help text should have the class 'form-text'.")
         self.assertIn("text-muted", help_text["class"], "The help text should have the class 'text-muted'.")
+
+    def test_select_class(self):
+        res = render_form_field("select1")
+        self.assertIn('class="form-select"', res)
 
     def test_required_field(self):
         required_css_class = "bootstrap5-req"
@@ -413,17 +417,17 @@ class FieldTest(TestCase):
             "required, must be placed inside the input-group",
         )
         self._select_one_element(
-            res, ".form-group > .form-text", "The form-text message must be placed inside the form-group"
+            res, ".mb-3 > .form-text", "The form-text message must be placed inside the mb-3"
         )
         self.assertEqual(
-            len(res.select(".form-group > .invalid-feedback")),
+            len(res.select(".mb-3 > .invalid-feedback")),
             0,
-            "The invalid-feedback message must be placed inside the " "input-group and not inside the form-group",
+            "The invalid-feedback message must be placed inside the " "input-group and not inside the mb-3",
         )
         self.assertEqual(
             len(res.select(".input-group > .form-text")),
             0,
-            "The form-text message must be placed inside the form-group and " "not inside the input-group",
+            "The form-text message must be placed inside the mb-3 and " "not inside the input-group",
         )
 
     def test_size(self):
@@ -458,7 +462,7 @@ class FieldTest(TestCase):
 
     def test_label(self):
         res = render_template_with_form('{% bootstrap_label "foobar" label_for="subject" %}')
-        self.assertEqual('<label for="subject">foobar</label>', res)
+        self.assertEqual('<label class="form-label" for="subject">foobar</label>', res)
 
     def test_attributes_consistency(self):
         form = TestForm()
@@ -600,12 +604,12 @@ class ShowLabelTest(TestCase):
     def test_show_label_false(self):
         form = TestForm()
         res = render_template_with_form("{% bootstrap_form form show_label=False %}", {"form": form})
-        self.assertIn("sr-only", res)
+        self.assertIn("visually-hidden", res)
 
-    def test_show_label_sr_only(self):
+    def test_show_label_visually_hidden(self):
         form = TestForm()
-        res = render_template_with_form("{% bootstrap_form form show_label='sr-only' %}", {"form": form})
-        self.assertIn("sr-only", res)
+        res = render_template_with_form("{% bootstrap_form form show_label='visually-hidden' %}", {"form": form})
+        self.assertIn("visually-hidden", res)
 
     def test_show_label_skip(self):
         form = TestForm()
@@ -616,7 +620,7 @@ class ShowLabelTest(TestCase):
         TestFormSet = formset_factory(TestForm, extra=1)
         test_formset = TestFormSet()
         res = render_template_with_form("{% bootstrap_formset formset show_label=False %}", {"formset": test_formset})
-        self.assertIn("sr-only", res)
+        self.assertIn("visually-hidden", res)
 
 
 class PaginatorTest(TestCase):

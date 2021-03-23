@@ -15,6 +15,7 @@ from ..bootstrap import (
 )
 from ..components import render_alert
 from ..forms import (
+    FORM_GROUP_CLASS,
     render_button,
     render_field,
     render_field_and_label,
@@ -379,13 +380,15 @@ def bootstrap_field(*args, **kwargs):
         form_group_class
             CSS class of the ``div`` that wraps the field and label.
 
-            :default: ``'form-group'``
+            :default: ``'mb-3'``
 
         field_class
             CSS class of the ``div`` that wraps the field.
 
         label_class
-            CSS class of the ``label`` element. Will always have ``control-label`` as the last CSS class.
+            CSS class of the ``label`` element.
+
+            :default: ``'form-label'``
 
         form_check_class
             CSS class of the ``div`` element wrapping the label and input when rendering checkboxes and radio buttons.
@@ -399,7 +402,7 @@ def bootstrap_field(*args, **kwargs):
             Whether the show the label of the field.
 
                 * ``True``
-                * ``False``/``'sr-only'``
+                * ``False``/``'visually-hidden'``
                 * ``'skip'``
 
             :default: ``True``
@@ -408,7 +411,7 @@ def bootstrap_field(*args, **kwargs):
             A list of field names that should not be rendered
 
         size
-            Controls the size of the rendered ``div.form-group`` through the use of CSS classes.
+            Controls the size of the rendered ``input.form-control`` through the use of CSS classes.
 
             One of the following values:
 
@@ -433,13 +436,15 @@ def bootstrap_field(*args, **kwargs):
             Text that should be prepended to the form field. Can also be an icon, e.g.
             ``'<span class="glyphicon glyphicon-calendar"></span>'``
 
-            See the `Bootstrap docs <http://getbootstrap.com/components/#input-groups-basic>` for more examples.
+            See the `Bootstrap docs <https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example>`
+            for more examples.
 
         addon_after
             Text that should be appended to the form field. Can also be an icon, e.g.
             ``'<span class="glyphicon glyphicon-calendar"></span>'``
 
-            See the `Bootstrap docs <http://getbootstrap.com/components/#input-groups-basic>` for more examples.
+            See the `Bootstrap docs <https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example>`
+            for more examples.
 
         addon_before_class
             Class used on the span when ``addon_before`` is used.
@@ -471,7 +476,7 @@ def bootstrap_field(*args, **kwargs):
             :default: ``'has-error'``. Can be changed :doc:`settings`
 
         required_css_class
-            CSS class used on the ``div.form-group`` to indicate a field is required
+            CSS class used on the ``div.mb-3`` to indicate a field is required
 
             :default: ``''``. Can be changed :doc:`settings`
 
@@ -510,6 +515,8 @@ def bootstrap_label(*args, **kwargs):
 
         label_class
             The CSS class for the rendered ``<label>``
+
+            :default': ``'form-label'``
 
         label_title
             The value that will be in the ``title`` attribute of the rendered ``<label>``
@@ -680,7 +687,7 @@ class ButtonsNode(template.Node):
             buttons.append(bootstrap_button(reset, "reset"))
         buttons = " ".join(buttons) + self.nodelist.render(context)
         output_kwargs.update({"label": None, "field": buttons})
-        css_class = output_kwargs.pop("form_group_class", "form-group")
+        css_class = output_kwargs.pop("form_group_class", FORM_GROUP_CLASS)
         output = render_form_group(render_field_and_label(**output_kwargs), css_class=css_class)
         if self.asvar:
             context[self.asvar] = output
