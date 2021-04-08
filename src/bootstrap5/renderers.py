@@ -370,7 +370,7 @@ class FieldRenderer(BaseRenderer):
             html = self.list_to_class(html, "checkbox")
         elif isinstance(self.widget, SelectDateWidget):
             html = self.fix_date_select_input(html)
-        elif isinstance(self.widget, CheckboxInput):
+        elif isinstance(self.widget, CheckboxInput) and self.show_label:
             html = self.add_checkbox_label(html)
         elif isinstance(self.widget, FileInput):
             html = self.fix_file_input_label(html)
