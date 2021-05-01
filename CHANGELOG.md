@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.3] - Fix small bugs 2021-05-01
+
+- Fix inline file field display
+
 ## [1.0.2] - Fix small bugs 2021-04-08
 
 - Fix checkbox label display
