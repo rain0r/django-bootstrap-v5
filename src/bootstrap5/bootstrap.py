@@ -27,6 +27,7 @@ BOOTSTRAP5_DEFAULTS = {
     "field_renderers": {
         "default": "bootstrap5.renderers.FieldRenderer",
         "inline": "bootstrap5.renderers.InlineFieldRenderer",
+        "horizontal": "bootstrap5.renderers.HorizontalFieldRenderer",
     },
 }
 

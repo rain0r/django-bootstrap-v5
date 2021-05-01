@@ -559,3 +559,11 @@ class InlineFieldRenderer(FieldRenderer):
 
     def get_label_class(self):
         return add_css_class(self.label_class, "visually-hidden")
+
+
+class HorizontalFieldRenderer(FieldRenderer):
+    """Horizontal field renderer."""
+
+    # No-op the fix for normal form layout because it breaks the horizontal one.
+    def fix_file_input_label(self, html):
+        return html
