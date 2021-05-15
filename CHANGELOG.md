@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.4] - Update dependencies 2021-05-16
+
+- importlib-metadata version dependency
+
 ## [1.0.3] - Fix small bugs 2021-05-01
 
 - Fix inline file field display
