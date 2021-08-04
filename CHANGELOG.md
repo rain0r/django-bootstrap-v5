@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.5] - Update dependencies 2021-08-04
+
+- Update to the latest Bootstrap 5 URLs
+
 ## [1.0.4] - Update dependencies 2021-05-16
 
 - importlib-metadata version dependency
