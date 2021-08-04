@@ -65,3 +65,5 @@ reports
 
 # example database
 example/db.sqlite3
+
+*.swp*
