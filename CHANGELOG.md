@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.6] - Update dependencies 2021-10-08
+
+- Update to the latest Bootstrap 5.1 URLs
+
 ## [1.0.5] - Update dependencies 2021-08-04
 
 - Update to the latest Bootstrap 5 URLs
