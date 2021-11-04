@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.7] - Update dependencies 2021-11-05
+
+- Allow Django 4
+
 ## [1.0.6] - Update dependencies 2021-10-08
 
 - Update to the latest Bootstrap 5.1 URLs
