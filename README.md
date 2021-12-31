@@ -49,7 +49,7 @@ The full documentation is at https://django-bootstrap-v5.readthedocs.io/
 
 ## Example template
 
-```djangotemplate
+```jinja
 {% load bootstrap5 %}
 
 {# Display a form #}

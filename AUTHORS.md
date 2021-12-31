@@ -23,3 +23,4 @@ This application is developed and maintained by [Zostera](https://zostera.nl).
 - pmav99 <pmav99@users.noreply.github.com>
 - Richard Hajdu <tuskone16@gmail.com>
 - Timothy Allen <tim@pyphilly.org>
+- Simon Berndtsson <simon.berndtsson@gmail.com>
