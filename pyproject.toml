@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-bootstrap-v5"
-version = "1.0.7"
+version = "1.0.8"
 description = "Bootstrap 5 support for Django projects"
 homepage = "https://github.com/zelenij/django-bootstrap-v5"
 repository = "https://github.com/zelenij/django-bootstrap-v5"

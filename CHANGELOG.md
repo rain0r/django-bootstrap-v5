@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.9] - Update dependencies 2021-12-31
+
+- Fix Django 4 sample site
+
 ## [1.0.7] - Update dependencies 2021-11-05
 
 - Allow Django 4
