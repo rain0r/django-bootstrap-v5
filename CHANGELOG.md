@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.10] - Update dependencies 2022-02-05
+
+- Update Sphinx dependencies
+
 ## [1.0.9] - Update dependencies 2021-12-31
 
 - Fix Django 4 sample site
