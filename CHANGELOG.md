@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.11] - Update dependencies 2022-02-10
+
+- Update to the latest Bootstrap 5.1.3 URLs
+
 ## [1.0.10] - Update dependencies 2022-02-05
 
 - Update Sphinx dependencies
