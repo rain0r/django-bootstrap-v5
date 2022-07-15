@@ -2,7 +2,7 @@
 Widgets
 =======
 
-A form widget is available for displaying radio buttons as a Bootstrap 5 button group(https://getbootstrap.com/docs/5/components/button-group/).
+A form widget is available for displaying radio buttons as a Bootstrap 5 button group(https://getbootstrap.com/docs/5.2/components/button-group/#checkbox-and-radio-button-groups/).
 
 
 RadioSelectButtonGroup
